@@ -1,0 +1,4449 @@
+
+/**
+  * From rudder/main.css: @import "../base/main.css";
+  */
+
+
+/**
+  * From base/main.css: @import "yui-fonts.css";
+  */
+
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.5.1
+*/
+body {font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}table {font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+
+/** End of yui-fonts.css */
+
+
+/**
+  * From base/main.css: @import "jquery-ui.css";
+  */
+
+
+/**
+  * From base/jquery-ui.css: @import "jquery-ui.custom.modified.css";
+  */
+
+/*! jQuery UI - v1.10.0 - 2013-02-11
+* http://jqueryui.com
+* Includes: jquery.ui.core.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.datepicker.css, jquery.ui.menu.css, jquery.ui.slider.css, jquery.ui.tabs.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Arial%2CHelvetica%2Csans-serif&fwDefault=normal&fsDefault=1em&cornerRadius=0.3em&bgColorHeader=cccccc&bgTextureHeader=highlight_soft&bgImgOpacityHeader=75&borderColorHeader=aaaaaa&fcHeader=222222&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=aaaaaa&fcContent=222222&iconColorContent=222222&bgColorDefault=e6e6e6&bgTextureDefault=glass&bgImgOpacityDefault=75&borderColorDefault=d3d3d3&fcDefault=555555&iconColorDefault=888888&bgColorHover=dadada&bgTextureHover=glass&bgImgOpacityHover=75&borderColorHover=999999&fcHover=212121&iconColorHover=454545&bgColorActive=ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=aaaaaa&fcActive=212121&iconColorActive=454545&bgColorHighlight=fbf9ee&bgTextureHighlight=glass&bgImgOpacityHighlight=55&borderColorHighlight=fcefa1&fcHighlight=363636&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=glass&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+* Copyright (c) 2013 jQuery Foundation and other contributors Licensed MIT */
+
+/* Layout helpers
+----------------------------------*/
+.ui-helper-hidden {
+	display: none;
+}
+.ui-helper-hidden-accessible {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.ui-helper-reset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	line-height: 1.3;
+	text-decoration: none;
+	font-size: 100%;
+	list-style: none;
+}
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+	content: "";
+	display: table;
+}
+.ui-helper-clearfix:after {
+	clear: both;
+}
+.ui-helper-clearfix {
+	min-height: 0; /* support: IE7 */
+}
+.ui-helper-zfix {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	opacity: 0;
+	filter:Alpha(Opacity=0);
+}
+
+.ui-front {
+	z-index: 100;
+}
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+	cursor: default !important;
+}
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.ui-accordion .ui-accordion-header {
+	display: block;
+	cursor: pointer;
+	position: relative;
+	margin-top: 2px;
+	padding: .5em .5em .5em .7em;
+	min-height: 0; /* support: IE7 */
+}
+.ui-accordion .ui-accordion-icons {
+	padding-left: 2.2em;
+}
+.ui-accordion .ui-accordion-noicons {
+	padding-left: .7em;
+}
+.ui-accordion .ui-accordion-icons .ui-accordion-icons {
+	padding-left: 2.2em;
+}
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+	position: absolute;
+	left: .5em;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-accordion .ui-accordion-content {
+	padding: 1em 2.2em;
+	border-top: 0;
+	overflow: auto;
+}
+.ui-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+}
+.ui-datepicker {
+	width: 17em;
+	padding: .2em .2em 0;
+	display: none;
+}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	padding: .2em 0;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	position: absolute;
+	top: 2px;
+	width: 1.8em;
+	height: 1.8em;
+}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+	top: 1px;
+}
+.ui-datepicker .ui-datepicker-prev {
+	left: 2px;
+}
+.ui-datepicker .ui-datepicker-next {
+	right: 2px;
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+	left: 1px;
+}
+.ui-datepicker .ui-datepicker-next-hover {
+	right: 1px;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+}
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month-year {
+	width: 100%;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	width: 49%;
+}
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+}
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+}
+.ui-datepicker td {
+	border: 0;
+	padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: .2em;
+	text-align: right;
+	text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+	background-image: none;
+	margin: .7em 0 0 0;
+	padding: 0 .2em;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+	float: right;
+	margin: .5em .2em .4em;
+	cursor: pointer;
+	padding: .2em .6em .3em .6em;
+	width: auto;
+	overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+	float: left;
+}
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi {
+	width: auto;
+}
+.ui-datepicker-multi .ui-datepicker-group {
+	float: left;
+}
+.ui-datepicker-multi .ui-datepicker-group table {
+	width: 95%;
+	margin: 0 auto .4em;
+}
+.ui-datepicker-multi-2 .ui-datepicker-group {
+	width: 50%;
+}
+.ui-datepicker-multi-3 .ui-datepicker-group {
+	width: 33.3%;
+}
+.ui-datepicker-multi-4 .ui-datepicker-group {
+	width: 25%;
+}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+	border-left-width: 0;
+}
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+	clear: left;
+}
+.ui-datepicker-row-break {
+	clear: both;
+	width: 100%;
+	font-size: 0;
+}
+
+/* RTL support */
+.ui-datepicker-rtl {
+	direction: rtl;
+}
+.ui-datepicker-rtl .ui-datepicker-prev {
+	right: 2px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next {
+	left: 2px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+	right: 1px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+	left: 1px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+	clear: right;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+	float: left;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-group {
+	float: right;
+}
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+	border-right-width: 0;
+	border-left-width: 1px;
+}
+.ui-menu {
+	list-style: none;
+	padding: 2px;
+	margin: 0;
+	display: block;
+	outline: none;
+}
+.ui-menu .ui-menu {
+	margin-top: -3px;
+	position: absolute;
+}
+.ui-menu .ui-menu-item {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.ui-menu .ui-menu-divider {
+	margin: 5px -2px 5px -2px;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	border-width: 1px 0 0 0;
+}
+.ui-menu .ui-menu-item a {
+	text-decoration: none;
+	display: block;
+	padding: 2px .4em;
+	line-height: 1.5;
+	min-height: 0; /* support: IE7 */
+	font-weight: normal;
+}
+.ui-menu .ui-menu-item a.ui-state-focus,
+.ui-menu .ui-menu-item a.ui-state-active {
+	font-weight: normal;
+	margin: -1px;
+}
+
+.ui-menu .ui-state-disabled {
+	font-weight: normal;
+	margin: .4em 0 .2em;
+	line-height: 1.5;
+}
+.ui-menu .ui-state-disabled a {
+	cursor: default;
+}
+
+/* icon support */
+.ui-menu-icons {
+	position: relative;
+}
+.ui-menu-icons .ui-menu-item a {
+	position: relative;
+	padding-left: 2em;
+}
+
+/* left-aligned */
+.ui-menu .ui-icon {
+	position: absolute;
+	top: .2em;
+	left: .2em;
+}
+
+/* right-aligned */
+.ui-menu .ui-menu-icon {
+	position: static;
+	float: right;
+}
+.ui-slider {
+	position: relative;
+	text-align: left;
+}
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 1.2em;
+	height: 1.2em;
+	cursor: default;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	background-position: 0 0;
+}
+
+/* For IE8 - See #6727 */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range {
+	filter: inherit;
+}
+
+.ui-slider-horizontal {
+	height: .8em;
+}
+.ui-slider-horizontal .ui-slider-handle {
+	top: -.3em;
+	margin-left: -.6em;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+	left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}
+
+.ui-slider-vertical {
+	width: .8em;
+	height: 100px;
+}
+.ui-slider-vertical .ui-slider-handle {
+	left: -.3em;
+	margin-left: 0;
+	margin-bottom: -.6em;
+}
+.ui-slider-vertical .ui-slider-range {
+	left: 0;
+	width: 100%;
+}
+.ui-slider-vertical .ui-slider-range-min {
+	bottom: 0;
+}
+.ui-slider-vertical .ui-slider-range-max {
+	top: 0;
+}
+.ui-tabs {
+	position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+	padding: .2em;
+}
+.ui-tabs .ui-tabs-nav {
+	margin: 0;
+	padding: .2em .2em 0;
+}
+.ui-tabs .ui-tabs-nav li {
+	list-style: none;
+	float: left;
+	position: relative;
+	top: 0;
+	margin: 1px .2em 0 0;
+	border-bottom: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+.ui-tabs .ui-tabs-nav li a {
+	float: left;
+	padding: .5em 1em;
+	text-decoration: none;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	margin-bottom: -1px;
+	padding-bottom: 1px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading a {
+	cursor: text;
+}
+.ui-tabs .ui-tabs-nav li a, /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a {
+	cursor: pointer;
+}
+.ui-tabs .ui-tabs-panel {
+	display: block;
+	border-width: 0;
+	padding: 1em 1.4em;
+	background: none;
+}
+
+/* Component containers
+----------------------------------*/
+.ui-widget {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 1em;
+}
+.ui-widget .ui-widget {
+	font-size: 1em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 1em;
+}
+.ui-widget-content {
+	border: 1px solid #aaaaaa;
+	background: #ffffff url(../../../static/images/jquery_ui/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
+	color: #222222;
+}
+.ui-widget-content a {
+	color: #222222;
+}
+.ui-widget-header {
+	border: 1px solid #aaaaaa;
+	background: #cccccc url(../../../static/images/jquery_ui/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+	color: #222222;
+	font-weight: bold;
+}
+.ui-widget-header a {
+	color: #222222;
+}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	border: 1px solid #d3d3d3;
+	background: #e6e6e6 url(../../../static/images/jquery_ui/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #555555;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+	color: #555555;
+	text-decoration: none;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	border: 1px solid #999999;
+	background: #dadada url(../../../static/images/jquery_ui/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #212121;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited {
+	color: #212121;
+	text-decoration: none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+	border: 1px solid #aaaaaa;
+	background: #ffffff url(../../../static/images/jquery_ui/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #212121;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: #212121;
+	text-decoration: none;
+}
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+	border: 1px solid #fcefa1;
+	background: #fbf9ee url(../../../static/images/jquery_ui/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x;
+	color: #363636;
+}
+.ui-state-highlight a,
+.ui-widget-content .ui-state-highlight a,
+.ui-widget-header .ui-state-highlight a {
+	color: #363636;
+}
+.ui-state-error,
+.ui-widget-content .ui-state-error,
+.ui-widget-header .ui-state-error {
+	border: 1px solid #cd0a0a;
+	background: #fef1ec url(../../../static/images/jquery_ui/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
+	color: #cd0a0a;
+}
+.ui-state-error a,
+.ui-widget-content .ui-state-error a,
+.ui-widget-header .ui-state-error a {
+	color: #cd0a0a;
+}
+.ui-state-error-text,
+.ui-widget-content .ui-state-error-text,
+.ui-widget-header .ui-state-error-text {
+	color: #cd0a0a;
+}
+.ui-priority-primary,
+.ui-widget-content .ui-priority-primary,
+.ui-widget-header .ui-priority-primary {
+	font-weight: bold;
+}
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+	opacity: .7;
+	filter:Alpha(Opacity=70);
+	font-weight: normal;
+}
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+	opacity: .35;
+	filter:Alpha(Opacity=35);
+	background-image: none;
+}
+.ui-state-disabled .ui-icon {
+	filter:Alpha(Opacity=35); /* For IE8 - See #6059 */
+}
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+	width: 16px;
+	height: 16px;
+	background-position: 16px 16px;
+}
+.ui-icon,
+.ui-widget-content .ui-icon {
+	background-image: url(../../../static/images/jquery_ui/ui-icons_222222_256x240.png);
+}
+.ui-widget-header .ui-icon {
+	background-image: url(../../../static/images/jquery_ui/ui-icons_222222_256x240.png);
+}
+.ui-state-default .ui-icon {
+	background-image: url(../../../static/images/jquery_ui/ui-icons_888888_256x240.png);
+}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon {
+	background-image: url(../../../static/images/jquery_ui/ui-icons_454545_256x240.png);
+}
+.ui-state-active .ui-icon {
+	background-image: url(../../../static/images/jquery_ui/ui-icons_454545_256x240.png);
+}
+.ui-state-highlight .ui-icon {
+	background-image: url(../../../static/images/jquery_ui/ui-icons_2e83ff_256x240.png);
+}
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+	background-image: url(../../../static/images/jquery_ui/ui-icons_cd0a0a_256x240.png);
+}
+
+/* positioning */
+.ui-icon-carat-1-n { background-position: 0 0; }
+.ui-icon-carat-1-ne { background-position: -16px 0; }
+.ui-icon-carat-1-e { background-position: -32px 0; }
+.ui-icon-carat-1-se { background-position: -48px 0; }
+.ui-icon-carat-1-s { background-position: -64px 0; }
+.ui-icon-carat-1-sw { background-position: -80px 0; }
+.ui-icon-carat-1-w { background-position: -96px 0; }
+.ui-icon-carat-1-nw { background-position: -112px 0; }
+.ui-icon-carat-2-n-s { background-position: -128px 0; }
+.ui-icon-carat-2-e-w { background-position: -144px 0; }
+.ui-icon-triangle-1-n { background-position: 0 -16px; }
+.ui-icon-triangle-1-ne { background-position: -16px -16px; }
+.ui-icon-triangle-1-e { background-position: -32px -16px; }
+.ui-icon-triangle-1-se { background-position: -48px -16px; }
+.ui-icon-triangle-1-s { background-position: -64px -16px; }
+.ui-icon-triangle-1-sw { background-position: -80px -16px; }
+.ui-icon-triangle-1-w { background-position: -96px -16px; }
+.ui-icon-triangle-1-nw { background-position: -112px -16px; }
+.ui-icon-triangle-2-n-s { background-position: -128px -16px; }
+.ui-icon-triangle-2-e-w { background-position: -144px -16px; }
+.ui-icon-arrow-1-n { background-position: 0 -32px; }
+.ui-icon-arrow-1-ne { background-position: -16px -32px; }
+.ui-icon-arrow-1-e { background-position: -32px -32px; }
+.ui-icon-arrow-1-se { background-position: -48px -32px; }
+.ui-icon-arrow-1-s { background-position: -64px -32px; }
+.ui-icon-arrow-1-sw { background-position: -80px -32px; }
+.ui-icon-arrow-1-w { background-position: -96px -32px; }
+.ui-icon-arrow-1-nw { background-position: -112px -32px; }
+.ui-icon-arrow-2-n-s { background-position: -128px -32px; }
+.ui-icon-arrow-2-ne-sw { background-position: -144px -32px; }
+.ui-icon-arrow-2-e-w { background-position: -160px -32px; }
+.ui-icon-arrow-2-se-nw { background-position: -176px -32px; }
+.ui-icon-arrowstop-1-n { background-position: -192px -32px; }
+.ui-icon-arrowstop-1-e { background-position: -208px -32px; }
+.ui-icon-arrowstop-1-s { background-position: -224px -32px; }
+.ui-icon-arrowstop-1-w { background-position: -240px -32px; }
+.ui-icon-arrowthick-1-n { background-position: 0 -48px; }
+.ui-icon-arrowthick-1-ne { background-position: -16px -48px; }
+.ui-icon-arrowthick-1-e { background-position: -32px -48px; }
+.ui-icon-arrowthick-1-se { background-position: -48px -48px; }
+.ui-icon-arrowthick-1-s { background-position: -64px -48px; }
+.ui-icon-arrowthick-1-sw { background-position: -80px -48px; }
+.ui-icon-arrowthick-1-w { background-position: -96px -48px; }
+.ui-icon-arrowthick-1-nw { background-position: -112px -48px; }
+.ui-icon-arrowthick-2-n-s { background-position: -128px -48px; }
+.ui-icon-arrowthick-2-ne-sw { background-position: -144px -48px; }
+.ui-icon-arrowthick-2-e-w { background-position: -160px -48px; }
+.ui-icon-arrowthick-2-se-nw { background-position: -176px -48px; }
+.ui-icon-arrowthickstop-1-n { background-position: -192px -48px; }
+.ui-icon-arrowthickstop-1-e { background-position: -208px -48px; }
+.ui-icon-arrowthickstop-1-s { background-position: -224px -48px; }
+.ui-icon-arrowthickstop-1-w { background-position: -240px -48px; }
+.ui-icon-arrowreturnthick-1-w { background-position: 0 -64px; }
+.ui-icon-arrowreturnthick-1-n { background-position: -16px -64px; }
+.ui-icon-arrowreturnthick-1-e { background-position: -32px -64px; }
+.ui-icon-arrowreturnthick-1-s { background-position: -48px -64px; }
+.ui-icon-arrowreturn-1-w { background-position: -64px -64px; }
+.ui-icon-arrowreturn-1-n { background-position: -80px -64px; }
+.ui-icon-arrowreturn-1-e { background-position: -96px -64px; }
+.ui-icon-arrowreturn-1-s { background-position: -112px -64px; }
+.ui-icon-arrowrefresh-1-w { background-position: -128px -64px; }
+.ui-icon-arrowrefresh-1-n { background-position: -144px -64px; }
+.ui-icon-arrowrefresh-1-e { background-position: -160px -64px; }
+.ui-icon-arrowrefresh-1-s { background-position: -176px -64px; }
+.ui-icon-arrow-4 { background-position: 0 -80px; }
+.ui-icon-arrow-4-diag { background-position: -16px -80px; }
+.ui-icon-extlink { background-position: -32px -80px; }
+.ui-icon-newwin { background-position: -48px -80px; }
+.ui-icon-refresh { background-position: -64px -80px; }
+.ui-icon-shuffle { background-position: -80px -80px; }
+.ui-icon-transfer-e-w { background-position: -96px -80px; }
+.ui-icon-transferthick-e-w { background-position: -112px -80px; }
+.ui-icon-folder-collapsed { background-position: 0 -96px; }
+.ui-icon-folder-open { background-position: -16px -96px; }
+.ui-icon-document { background-position: -32px -96px; }
+.ui-icon-document-b { background-position: -48px -96px; }
+.ui-icon-note { background-position: -64px -96px; }
+.ui-icon-mail-closed { background-position: -80px -96px; }
+.ui-icon-mail-open { background-position: -96px -96px; }
+.ui-icon-suitcase { background-position: -112px -96px; }
+.ui-icon-comment { background-position: -128px -96px; }
+.ui-icon-person { background-position: -144px -96px; }
+.ui-icon-print { background-position: -160px -96px; }
+.ui-icon-trash { background-position: -176px -96px; }
+.ui-icon-locked { background-position: -192px -96px; }
+.ui-icon-unlocked { background-position: -208px -96px; }
+.ui-icon-bookmark { background-position: -224px -96px; }
+.ui-icon-tag { background-position: -240px -96px; }
+.ui-icon-home { background-position: 0 -112px; }
+.ui-icon-flag { background-position: -16px -112px; }
+.ui-icon-calendar { background-position: -32px -112px; }
+.ui-icon-cart { background-position: -48px -112px; }
+.ui-icon-pencil { background-position: -64px -112px; }
+.ui-icon-clock { background-position: -80px -112px; }
+.ui-icon-disk { background-position: -96px -112px; }
+.ui-icon-calculator { background-position: -112px -112px; }
+.ui-icon-zoomin { background-position: -128px -112px; }
+.ui-icon-zoomout { background-position: -144px -112px; }
+.ui-icon-search { background-position: -160px -112px; }
+.ui-icon-wrench { background-position: -176px -112px; }
+.ui-icon-gear { background-position: -192px -112px; }
+.ui-icon-heart { background-position: -208px -112px; }
+.ui-icon-star { background-position: -224px -112px; }
+.ui-icon-link { background-position: -240px -112px; }
+.ui-icon-cancel { background-position: 0 -128px; }
+.ui-icon-plus { background-position: -16px -128px; }
+.ui-icon-plusthick { background-position: -32px -128px; }
+.ui-icon-minus { background-position: -48px -128px; }
+.ui-icon-minusthick { background-position: -64px -128px; }
+.ui-icon-close { background-position: -80px -128px; }
+.ui-icon-closethick { background-position: -96px -128px; }
+.ui-icon-key { background-position: -112px -128px; }
+.ui-icon-lightbulb { background-position: -128px -128px; }
+.ui-icon-scissors { background-position: -144px -128px; }
+.ui-icon-clipboard { background-position: -160px -128px; }
+.ui-icon-copy { background-position: -176px -128px; }
+.ui-icon-contact { background-position: -192px -128px; }
+.ui-icon-image { background-position: -208px -128px; }
+.ui-icon-video { background-position: -224px -128px; }
+.ui-icon-script { background-position: -240px -128px; }
+.ui-icon-alert { background-position: 0 -144px; }
+.ui-icon-info { background-position: -16px -144px; }
+.ui-icon-notice { background-position: -32px -144px; }
+.ui-icon-help { background-position: -48px -144px; }
+.ui-icon-check { background-position: -64px -144px; }
+.ui-icon-bullet { background-position: -80px -144px; }
+.ui-icon-radio-on { background-position: -96px -144px; }
+.ui-icon-radio-off { background-position: -112px -144px; }
+.ui-icon-pin-w { background-position: -128px -144px; }
+.ui-icon-pin-s { background-position: -144px -144px; }
+.ui-icon-play { background-position: 0 -160px; }
+.ui-icon-pause { background-position: -16px -160px; }
+.ui-icon-seek-next { background-position: -32px -160px; }
+.ui-icon-seek-prev { background-position: -48px -160px; }
+.ui-icon-seek-end { background-position: -64px -160px; }
+.ui-icon-seek-start { background-position: -80px -160px; }
+/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+.ui-icon-seek-first { background-position: -80px -160px; }
+.ui-icon-stop { background-position: -96px -160px; }
+.ui-icon-eject { background-position: -112px -160px; }
+.ui-icon-volume-off { background-position: -128px -160px; }
+.ui-icon-volume-on { background-position: -144px -160px; }
+.ui-icon-power { background-position: 0 -176px; }
+.ui-icon-signal-diag { background-position: -16px -176px; }
+.ui-icon-signal { background-position: -32px -176px; }
+.ui-icon-battery-0 { background-position: -48px -176px; }
+.ui-icon-battery-1 { background-position: -64px -176px; }
+.ui-icon-battery-2 { background-position: -80px -176px; }
+.ui-icon-battery-3 { background-position: -96px -176px; }
+.ui-icon-circle-plus { background-position: 0 -192px; }
+.ui-icon-circle-minus { background-position: -16px -192px; }
+.ui-icon-circle-close { background-position: -32px -192px; }
+.ui-icon-circle-triangle-e { background-position: -48px -192px; }
+.ui-icon-circle-triangle-s { background-position: -64px -192px; }
+.ui-icon-circle-triangle-w { background-position: -80px -192px; }
+.ui-icon-circle-triangle-n { background-position: -96px -192px; }
+.ui-icon-circle-arrow-e { background-position: -112px -192px; }
+.ui-icon-circle-arrow-s { background-position: -128px -192px; }
+.ui-icon-circle-arrow-w { background-position: -144px -192px; }
+.ui-icon-circle-arrow-n { background-position: -160px -192px; }
+.ui-icon-circle-zoomin { background-position: -176px -192px; }
+.ui-icon-circle-zoomout { background-position: -192px -192px; }
+.ui-icon-circle-check { background-position: -208px -192px; }
+.ui-icon-circlesmall-plus { background-position: 0 -208px; }
+.ui-icon-circlesmall-minus { background-position: -16px -208px; }
+.ui-icon-circlesmall-close { background-position: -32px -208px; }
+.ui-icon-squaresmall-plus { background-position: -48px -208px; }
+.ui-icon-squaresmall-minus { background-position: -64px -208px; }
+.ui-icon-squaresmall-close { background-position: -80px -208px; }
+.ui-icon-grip-dotted-vertical { background-position: 0 -224px; }
+.ui-icon-grip-dotted-horizontal { background-position: -16px -224px; }
+.ui-icon-grip-solid-vertical { background-position: -32px -224px; }
+.ui-icon-grip-solid-horizontal { background-position: -48px -224px; }
+.ui-icon-gripsmall-diagonal-se { background-position: -64px -224px; }
+.ui-icon-grip-diagonal-se { background-position: -80px -224px; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+	border-top-left-radius: 0.3em;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+	border-top-right-radius: 0.3em;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+	border-bottom-left-radius: 0.3em;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+	border-bottom-right-radius: 0.3em;
+}
+
+/* Overlays */
+.ui-widget-overlay {
+	background: #aaaaaa url(../../../static/images/jquery_ui/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
+	opacity: .3;
+	filter: Alpha(Opacity=30);
+}
+.ui-widget-shadow {
+	margin: -8px 0 0 -8px;
+	padding: 8px;
+	background: #aaaaaa url(../../../static/images/jquery_ui/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
+	opacity: .3;
+	filter: Alpha(Opacity=30);
+	border-radius: 8px;
+}
+
+/** End of jquery-ui.custom.modified.css */
+
+
+/** End of jquery-ui.css */
+
+
+/**
+  * From base/main.css: @import "jquery-ui-timepicker-addon.css";
+  */
+
+/*
+ * jQuery timepicker addon
+ * By: Trent Richardson [http://trentrichardson.com]
+ * Version 1.2
+ * Last Modified: 02/02/2013
+ *
+ * Copyright 2013 Trent Richardson
+ * You may use this project under MIT or GPL licenses.
+ * http://trentrichardson.com/Impromptu/GPL-LICENSE.txt
+ * http://trentrichardson.com/Impromptu/MIT-LICENSE.txt
+ */
+
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; }
+.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+
+/** End of jquery-ui-timepicker-addon.css */
+
+
+/**
+  * From base/main.css: @import "jquery.modal.css";
+  */
+
+/*
+    Copyright (c) 2012 Kyle Fox
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+    LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+    OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+.modal {
+  display: none;
+  width: 400px;
+  background: #fff;
+  padding: 15px 30px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  -o-box-shadow: 0 0 10px #000;
+  -ms-box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000;
+}
+
+.modal a.close-modal {
+  position: absolute;
+  top: -12.5px;
+  right: -12.5px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-indent: -9999px;
+  background: url(../../../static/css/images/jquery-modal-close.png) no-repeat 0 0;
+}
+
+.modal-spinner {
+  display: none;
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -32px;
+  margin-top: -32px;
+  background: url(spinner.gif) #111 no-repeat center center;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+/** End of jquery.modal.css */
+
+
+/**
+  * From base/main.css: @import "superfish.css";
+  */
+
+
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+.sf-menu {
+	line-height:	1.0;
+}
+.sf-menu ul {
+	position:		absolute;
+	top:			-999em;
+	width:			10em; /* left offset of submenus need to match (see below) */
+}
+.sf-menu ul li {
+	width:			100%;
+}
+.sf-menu li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	float:			left;
+	position:		relative;
+}
+.sf-menu a {
+	display:		block;
+	position:		relative;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left:			0;
+	top:			2em; /* match top ul list item height */
+	z-index:		99;
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+
+/*** DEMO SKIN ***/
+.sf-menu {
+	float:			left;
+	margin-bottom:	1em;
+}
+.sf-menu a {
+	border-left:	1px solid #fff;
+	border-top:		1px solid #CFDEFF;
+	padding: 		.75em 1em;
+	text-decoration:none;
+}
+.sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	color:			#13a;
+}
+.sf-menu li {
+	background:		#BDD2FF;
+}
+.sf-menu li li {
+	background:		#AABDE6;
+}
+.sf-menu li li li {
+	background:		#9AAEDB;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background:		#CFDEFF;
+	outline:		0;
+}
+
+/*** arrows **/
+.sf-menu a.sf-with-ul {
+	padding-right: 	2.25em;
+	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator {
+	position:		absolute;
+	display:		block;
+	right:			.75em;
+	top:			1.05em; /* IE6 only */
+	width:			10px;
+	height:			10px;
+	text-indent: 	-999em;
+	overflow:		hidden;
+	background:		url(../../../static/css/images/arrows-ffffff.png) no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+a > .sf-sub-indicator {  /* give all except IE6 the correct values */
+	top:			.8em;
+	background-position: 0 -100px; /* use translucent arrow for modern browsers*/
+}
+/* apply hovers to modern browsers */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px -100px; /* arrow hovers for modern browsers*/
+}
+
+/* point right for anchors in subs */
+.sf-menu ul .sf-sub-indicator { background-position:  -10px 0; }
+.sf-menu ul a > .sf-sub-indicator { background-position:  0 0; }
+/* apply hovers to modern browsers */
+.sf-menu ul a:focus > .sf-sub-indicator,
+.sf-menu ul a:hover > .sf-sub-indicator,
+.sf-menu ul a:active > .sf-sub-indicator,
+.sf-menu ul li:hover > a > .sf-sub-indicator,
+.sf-menu ul li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px 0; /* arrow hovers for modern browsers*/
+}
+
+/*** shadows for all but IE6 ***/
+.sf-shadow ul {
+	background:	url(../../../static/css/images/shadow.png) no-repeat bottom right;
+	padding: 0 8px 9px 0;
+	-moz-border-radius-bottomleft: 17px;
+	-moz-border-radius-topright: 17px;
+	-webkit-border-top-right-radius: 17px;
+	-webkit-border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	border-bottom-left-radius: 17px;
+}
+.sf-shadow ul.sf-shadow-off {
+	background: transparent;
+}
+
+/** End of superfish.css */
+
+
+/**
+  * From base/main.css: @import "superfish-navbar.css";
+  */
+
+
+/*** adding the class sf-navbar in addition to sf-menu creates an all-horizontal nav-bar menu ***/
+.sf-navbar {
+	background:		#BDD2FF;
+	height:			2em;
+	padding-bottom:	2em;
+	position:		relative;
+}
+.sf-navbar li {
+	background:		#AABDE6;
+	position:		static;
+}
+.sf-navbar a {
+	border-top:		none;
+}
+.sf-navbar li ul {
+	width:			44em; /*IE6 soils itself without this*/
+}
+.sf-navbar li li {
+	background:		#BDD2FF;
+	position:		relative;
+}
+.sf-navbar li li ul {
+	width:			13em;
+}
+.sf-navbar li li li {
+	width:			100%;
+}
+.sf-navbar ul li {
+	width:			auto;
+	float:			left;
+}
+.sf-navbar a, .sf-navbar a:visited {
+	border:			none;
+}
+.sf-navbar li.current {
+	background:		#BDD2FF;
+}
+.sf-navbar li:hover,
+.sf-navbar li.sfHover,
+.sf-navbar li li.current,
+.sf-navbar a:focus, .sf-navbar a:hover, .sf-navbar a:active {
+	background:		#BDD2FF;
+}
+.sf-navbar ul li:hover,
+.sf-navbar ul li.sfHover,
+ul.sf-navbar ul li:hover li,
+ul.sf-navbar ul li.sfHover li,
+.sf-navbar ul a:focus, .sf-navbar ul a:hover, .sf-navbar ul a:active {
+	background:		#D1DFFF;
+}
+ul.sf-navbar li li li:hover,
+ul.sf-navbar li li li.sfHover,
+.sf-navbar li li.current li.current,
+.sf-navbar ul li li a:focus, .sf-navbar ul li li a:hover, .sf-navbar ul li li a:active {
+	background:		#E6EEFF;
+}
+ul.sf-navbar .current ul,
+ul.sf-navbar ul li:hover ul,
+ul.sf-navbar ul li.sfHover ul {
+	left:			0;
+	top:			2em; /* match top ul list item height */
+}
+ul.sf-navbar .current ul ul {
+	top: 			-999em;
+}
+
+.sf-navbar li li.current > a {
+	font-weight:	bold;
+}
+
+/*** point all arrows down ***/
+/* point right for anchors in subs */
+.sf-navbar ul .sf-sub-indicator { background-position: -10px -100px; }
+.sf-navbar ul a > .sf-sub-indicator { background-position: 0 -100px; }
+/* apply hovers to modern browsers */
+.sf-navbar ul a:focus > .sf-sub-indicator,
+.sf-navbar ul a:hover > .sf-sub-indicator,
+.sf-navbar ul a:active > .sf-sub-indicator,
+.sf-navbar ul li:hover > a > .sf-sub-indicator,
+.sf-navbar ul li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px -100px; /* arrow hovers for modern browsers*/
+}
+
+/*** remove shadow on first submenu ***/
+.sf-navbar > li > ul {
+	background: transparent;
+	padding: 0;
+	-moz-border-radius-bottomleft: 0;
+	-moz-border-radius-topright: 0;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+/** End of superfish-navbar.css */
+
+
+/**
+  * From base/main.css: @import "superfish-vertical.css";
+  */
+
+/*** adding sf-vertical in addition to sf-menu creates a vertical menu ***/
+.sf-vertical, .sf-vertical li {
+	width:	10em;
+}
+/* this lacks ul at the start of the selector, so the styles from the main CSS file override it where needed */
+.sf-vertical li:hover ul,
+.sf-vertical li.sfHover ul {
+	left:	10em; /* match ul width */
+	top:	0;
+}
+
+/*** alter arrow directions ***/
+.sf-vertical .sf-sub-indicator { background-position: -10px 0; } /* IE6 gets solid image only */
+.sf-vertical a > .sf-sub-indicator { background-position: 0 0; } /* use translucent arrow for modern browsers*/
+
+/* hover arrow direction for modern browsers*/
+.sf-vertical a:focus > .sf-sub-indicator,
+.sf-vertical a:hover > .sf-sub-indicator,
+.sf-vertical a:active > .sf-sub-indicator,
+.sf-vertical li:hover > a > .sf-sub-indicator,
+.sf-vertical li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px 0; /* arrow hovers for modern browsers*/
+}
+/** End of superfish-vertical.css */
+
+
+/**
+  * From base/main.css: @import "tablesorter.css";
+  */
+
+/*
+ *
+ * TableSorter 2.0 - Client-side table sorting with ease!
+ * @requires jQuery v1.2.3
+ *
+ * Copyright (c) 2007 Christian Bach
+ * Examples and docs at: http://tablesorter.com
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ */
+
+/* tables */
+table.tablesorter {
+	background-color: #CDCDCD;
+	margin:10px 0pt 15px;
+	font-size: 8pt;
+	width: 100%;
+	text-align: left;
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	background-color: #e6EEEE;
+	border: 1px solid #FFF;
+	font-size: 8pt;
+	padding: 4px;
+}
+table.tablesorter thead tr .header {
+	background-image: url(../../../static/images/tablesorter/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+	padding-right: 20px;
+}
+table.tablesorter tbody td {
+	color: #3D3D3D;
+	padding: 4px;
+	background-color: #FFF;
+	vertical-align: top;
+}
+table.tablesorter tbody tr.odd td {
+	background-color:#F0F0F6;
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(../../../static/images/tablesorter/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(../../../static/images/tablesorter/desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #8dbdd8;
+}
+
+/** End of tablesorter.css */
+
+
+/**
+  * From base/main.css: @import "farbtastic.css";
+  */
+
+/**
+ * Farbtastic Color Picker 1.2
+ * © 2008 Steven Wittens
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+.farbtastic {
+  position: relative;
+}
+.farbtastic * {
+  position: absolute;
+  cursor: crosshair;
+}
+.farbtastic, .farbtastic .wheel {
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .color, .farbtastic .overlay {
+  top: 47px;
+  left: 47px;
+  width: 101px;
+  height: 101px;
+}
+.farbtastic .wheel {
+  background: url(../../../static/images/farbtastic/wheel.png) no-repeat;
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .overlay {
+  background: url(../../../static/images/farbtastic/mask.png) no-repeat;
+}
+.farbtastic .marker {
+  width: 17px;
+  height: 17px;
+  margin: -8px 0 0 -8px;
+  overflow: hidden; 
+  background: url(../../../static/images/farbtastic/marker.png) no-repeat;
+}
+
+
+/** End of farbtastic.css */
+
+
+/**
+  * From base/main.css: @import "collection.css";
+  */
+
+table.collection td:first-child, table.collection th:first-child {
+    padding-left: 1em;
+}
+
+.collection-as-table ul.cf-values {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.collection-as-table .user a {
+    font-weight: inherit;
+}
+
+.collection-as-table .user a:visited {
+    color: inherit;
+}
+
+/** End of collection.css */
+
+
+/**
+  * From base/main.css: @import "forms.css";
+  */
+
+form {
+
+    background: none;
+    border: none;
+    margin: 0;
+}
+
+
+.input-row .label {
+  position: relative;
+  text-align: right;
+  width: 4em;
+}
+
+.input-row .input {
+  position: relative;
+  left: 1em;
+  width: 10em;
+  text-align: right;
+}
+
+.value {
+ font-size: 0.85em;
+
+}
+
+
+
+div.button-row {
+   text-align: right;
+   padding-right: 0.5em;
+}
+
+
+input[type=reset], input[type=submit], input[class=button], button {
+   color: #fff;
+   background: #3858a3;
+   padding: 0.25em;
+   padding-left: 0.5em;
+   padding-right: 0.5em;
+   -moz-border-radius: 0.5em;
+   -webkit-border-radius: 0.5em;
+   border-radius: 0.5em;
+}
+
+input.button:hover, button:hover, input[type=reset]:hover, input[type=submit]:hover, input[class=button]:hover {
+   background: #1D3B7D;
+}
+
+input.button:focus, button:focus, input[type=reset]:focus, input[type=submit]:focus, input[class=button]:focus {
+   background: #1D3B7D;
+}
+
+div.error div.error {
+ border: 2px solid #aa0000;
+ border-top: 1px solid #bb0000;
+ border-left: 1px solid #bb0000;
+ background-color: #fcc;
+}
+
+div.error .titlebox-title span.left {
+  background-color: #f00;
+  color: #fff;
+  border: 1px solid #cc0000;
+  border-right: 2px solid #bb0000;
+  border-bottom: 2px solid #bb0000;
+
+}
+
+
+div.results .titlebox-title .left, div.results .titlebox {
+  border: 1px solid #aa9;
+  border-bottom: 2px solid #990;
+  border-right: 2px solid #990;
+}
+
+div.results .titlebox-title .left {
+  background: #ff9;
+
+}
+
+div.results .titlebox {
+  background: #ffc;
+
+}
+
+div.results .titlebox-content {
+  padding: 0;
+}
+
+.results .titlebox-content > p:first-child,
+.error .titlebox-content > p:first-child {
+    margin-top: 0;
+}
+
+.results .titlebox-content > p:last-child,
+.error .titlebox-content > p:last-of-type {
+    margin-bottom: 0;
+}
+
+
+.label, .labeltop {
+ text-align: right;
+ font-size: 0.8em;
+ padding-right: .5em;
+
+}
+
+.cflabel {
+ text-align: right;
+ font-size: 0.8em;
+ padding-right: .5em;
+ width: 12em;
+}
+
+td.cflabel {
+    width: auto;
+}
+
+.labeltop, .label, .value {
+  padding-top: 0.25em;
+}
+
+div.ticket-info-basics div.titlebox-content .labeltop{
+  width: 10em;
+}
+
+div.submit {
+ text-align: right;
+}
+
+div.submit .extra-buttons {
+ text-align: left;
+ float: left;
+}
+
+
+div.widget {
+    padding-bottom: 0.5em;
+    clear: both;
+}
+
+div.widget .label {
+ text-align: right;
+ display: block;
+ width: 15em;
+ float: left;
+ clear: both;
+ font-size: 0.9em;
+ padding-right: 0.5em;
+}
+
+div.widget .hints {
+
+  display: block;
+  padding-left: 14em;
+  font-style: italic;
+}
+
+
+.combobox {
+    position: relative;
+    width: 11.5em;
+}
+
+.combobox .combo-button {
+    right: 0;
+    padding: 0;
+    margin-top: 0;
+    cursor: default;
+    color: ButtonFace;
+    background: ButtonFace;
+    border: 2px outset ButtonHighlight;
+}
+
+/* this style replaces the default down-triangle with one that looks more like
+ *  native widget sets. It does not work in IE as it's an :after pseudo element
+ *  with a "content" value. but that's ok because IE can't display unicode 25be
+ *  anyway */
+
+.combobox .combo-button:after {
+    color: ButtonText;
+    margin: 0;
+    padding: 0;
+    margin-top: -0.5em;
+    margin-left: -0.8em;
+    content: "\25be";
+}
+
+.combobox .combo-text {
+    border: 1px inset ButtonHighlight;
+    margin: 0;
+    padding: 0;
+}
+
+.combobox .combo-list {
+    border: 1px outset;
+    z-index: 150;
+}
+
+.value .TimeUnits{
+    margin-left: .5em;
+    width: 7em;
+}
+
+.cfinvalidfield {
+    font-style: italic;
+    color: red;
+}
+
+form div.submit div.buttons {
+    min-height: 2.8em;
+}
+
+form div.submit div.buttons div.back {
+    position: relative;
+    float: left;
+    width: 50%;
+    text-align: left;
+}
+
+form div.submit div.buttons div.next {
+    position: relative;
+    float: right;
+    width: 50%;
+}
+
+.invalid {
+    font-style: italic;
+    color: red;
+}
+
+/* query builder */
+
+#formatbuttons {
+    clear: both;
+}
+
+#ResetAuthTokenPrompt {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/** End of forms.css */
+
+
+/**
+  * From base/main.css: @import "misc.css";
+  */
+
+.hide, .hidden { display: none !important; }
+
+.clear { clear: both; }
+
+* html .clearfix {
+    height: 1%; /* IE5-6 */
+}
+.clearfix {
+    display: inline-block; /* IE7xhtml*/
+}
+html[xmlns] .clearfix { /* O */
+    display: block;
+}
+.clearfix:after { /* FF, O, etc. */
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+hr.clear {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1px;
+}
+
+/* Custom fields */
+
+/* Only apply these when we're not rendering in a table, hence the leading div. */
+div.edit-custom-field {
+    width: 48%;
+    float: left;
+    margin: 0.5em;
+}
+
+div.edit-custom-field .cflabel {
+    float: left;
+    padding-right: 0.5em;
+}
+
+div.edit-custom-field .entry {
+    margin-left: 10em;
+}
+
+.cflabel .name { font-weight: bold; }
+.cflabel .type { font-style: italic; }
+
+fieldset.cfedit {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+table.bulk-edit-custom-fields {
+    border-spacing: 0;
+}
+table.bulk-edit-custom-fields tr td {
+    padding-bottom: 0.5em;
+}
+
+.query-stacktrace-toggle {
+    float: right;
+}
+
+/* jQuery UI overrides */
+.ui-widget {
+    font-family: arial,helvetica,sans-serif !important;
+}
+
+textarea.messagebox, #cke_Content, #cke_UpdateContent {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.datepicker {
+    width: 17em;
+}
+
+/** End of misc.css */
+
+
+/**
+  * From base/main.css: @import "nav.css";
+  */
+
+.sf-menu li.active > .menu-item {
+    font-weight: bold;
+}
+
+#topactions input[type="submit"], #topactions input.button {
+    width: auto;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+#topactions form {
+    display: block;
+    float: right;
+    margin-left: 1em;
+    text-align: right;
+}
+
+
+/** End of nav.css */
+
+
+/**
+  * From base/main.css: @import "ticket-form.css";
+  */
+
+.ticket-info-basics input[name="Subject"] {
+    width: 20em;
+}
+
+#ticket-create-metadata .cflabel .name,
+#ticket-update-metadata .cflabel .name {
+    font-weight: normal;
+}
+
+#ticket-create-message .messagedetails,
+#ticket-update-message .messagedetails
+{
+    margin-bottom: 0.5em;
+}
+
+#ticket-create-message .messagedetails input[type="text"],
+#ticket-update-message .messagedetails input[type="text"] {
+    width: 90%;
+}
+
+#ticket-create-message #SubmitTicket,
+#ticket-update-message #SubmitTicket {
+    padding-bottom: 2em;
+}
+
+.ticket-info-squelch ul, #previewscrips ul {
+    list-style: none;
+}
+
+iframe.richtext-editor {
+    background-color: white !important;
+}
+
+.messagebox-container.action-response textarea,
+.messagebox-container.action-response iframe
+{
+    background-color: #fcc !important;
+}
+
+.sidebyside #ticket-create-metadata,
+.sidebyside #ticket-update-metadata {
+    float: right;
+    width: 40%;
+    clear: right;
+}
+
+.sidebyside #ticket-create-message,
+.sidebyside #ticket-update-message {
+    float: left;
+    width: 58%;
+    clear: left;
+}
+
+@media (max-width: 950px) {
+    /* Revert to a single column when we're less than 1000px wide */
+    .sidebyside #ticket-create-metadata,
+    .sidebyside #ticket-update-metadata,
+    .sidebyside #ticket-create-message,
+    .sidebyside #ticket-update-message
+    {
+        float: none;
+        width: auto;
+        clear: both;
+    }
+}
+
+.sidebyside #comp-Ticket-Update #body {
+    padding-top: 3em;
+}
+
+.sidebyside #ticket-create-message .button[name="AddMoreAttach"],
+.sidebyside #ticket-update-message .button[name="AddMoreAttach"] {
+    float: right;
+}
+
+
+/** End of ticket-form.css */
+
+
+/**
+  * From base/main.css: @import "rights-editor.css";
+  */
+
+/* Styles for putting jQuery UI tabs on the left */
+.rights-editor {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 110%;
+}
+
+/* Position and style the left tabs */
+.rights-editor > .ui-tabs-nav {
+    float: left;
+    background: transparent;
+    border: none;
+    color: black;
+    width: 25%;
+}
+
+.rights-editor > .ui-tabs-nav li {
+    float: none;
+    display: block;
+    border: none;
+    background: transparent;
+}
+
+.rights-editor > .ui-tabs-nav li a {
+    float: none;
+    display: block;
+    padding: 0 0 0.2em 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rights-editor .ui-tabs-nav li.category {
+    text-transform: uppercase;
+}
+
+li.category ~ li.category {
+    margin-top: 1em;
+}
+
+.rights-editor li.addprincipal .warning {
+    color: #a00;
+    display: none;
+}
+
+/* Position the outer-most panel */
+.rights-editor > .ui-tabs-panel {
+    position: static;
+    float: left;
+    width: 72%;
+}
+
+.rights-editor .ui-tabs-panel {
+    padding: 2px;
+}
+
+.rights-editor .ui-tabs-panel h3 {
+    color: black;
+    margin-top: 0;
+    line-height: 0.8em;
+}
+
+.rights-editor .ui-tabs-panel h3 .subgroups {
+    color: #444;
+    font-size: 80%;
+}
+
+.category-tabs {
+    width: 100%;
+    border: none;
+    background: none;
+}
+
+.category-tabs .ui-tabs-nav {
+    border: none;
+    background: none;
+}
+
+.category-tabs .ui-tabs-panel {
+    background: none;
+    border: 1px solid #aaa;
+}
+
+.rights-editor li.ui-tabs-active {
+    background: white !important;
+    color: #222 !important;
+    border-color: #aaa !important; 
+    font-weight: bold;
+}
+
+.rights-editor .ui-state-active a,
+.rights-editor .ui-state-hover a {
+    color: #222 !important;
+}
+
+.rights-editor .category-tabs li.ui-state-hover {
+    background: #f6f6f6;
+    border-color: #aaa !important;
+}
+
+.rights-editor .separator {
+    display: none;
+}
+
+.rights-editor ul.rights-list {
+    list-style: none;
+}
+
+.rights-editor ul.rights-list li {
+    padding: 0.2em 0;
+}
+
+.rights-editor ul.rights-list li:nth-child(even) {
+    background: #f4f4f4;
+}
+
+.rights-editor ul.rights-list li label {
+    cursor: pointer;
+}
+
+.rights-editor .rightname {
+    color: #888;
+    font-size: 0.9em;
+
+    position: absolute;
+    right: 1em;
+    margin-top: 0.3em;
+
+    text-align: right;
+}
+
+/** End of rights-editor.css */
+
+
+/**
+  * From base/main.css: @import "theme-editor.css";
+  */
+
+#upload-logo h2, #pick-section h2 {
+    margin: 0 0 0.5em 0;
+}
+
+#custom-css h2 {
+    margin: 0;
+}
+
+#upload-logo label {
+    font-weight: bold;
+}
+
+#logo-theme-editor a img {
+    border: none;
+}
+
+#simple-customize {
+    float: left;
+    width: 48%;
+}
+
+#custom-css {
+    float: left;
+    width: 48%;
+}
+
+#custom-css textarea {
+    width: 100%;
+}
+
+#customize-theme ol li {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#customize-theme ol li .description,
+#customize-theme ol li label
+{
+    font-weight: normal;
+}
+
+#customize-theme #section {
+    font-size: 1em;
+}
+
+.color-template {
+    height: 2em;
+    margin: 0 0 0.5em 0;
+}
+
+.primary-colors, #color-picker {
+    margin-top: 0.5em;
+}
+
+.primary-colors {
+    float: left;
+    width: 20%;
+}
+
+#color-picker {
+    float: right;
+    width: 78%; 
+}
+
+#logo-color-picker {
+    display: none; /* unhidden by javascript */
+    cursor: url(<% RT->Config->Get("WebImagesURL") %>/eyedropper.png), crosshair;
+}
+
+
+/** End of theme-editor.css */
+
+
+/**
+  * From base/main.css: @import "ticket.css";
+  */
+
+/* More about requestor ticket lists */
+
+.more-about-requestor-tickets {
+    background: none;
+    border: none;
+    font-family: arial,helvetica,sans-serif !important;
+    padding: 0 !important;
+}
+
+.more-about-requestor-tickets .ui-tabs-nav {
+    background: none;
+    border: none;
+    font-size: 80%;
+    padding: 0;
+    margin: 0;
+}
+
+.more-about-requestor-tickets .ui-tabs-nav li {
+    border: none !important;
+    background: none !important;
+    padding-right: 1em;
+}
+
+.more-about-requestor-tickets .ui-tabs-nav a {
+    padding: 0 !important;
+    margin: 0 !important;
+    color: black !important;
+}
+
+.more-about-requestor-tickets .ui-tabs-nav a:hover,
+.more-about-requestor-tickets .ui-tabs-nav .ui-tabs-active a {
+    text-decoration: underline;
+}
+
+.more-about-requestor-tickets .ui-tabs-panel {
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: black !important;
+}
+
+.more-about-requestor-tickets .ui-tabs-panel a {
+    color: black !important;
+}
+
+
+.plain-text-white-space {
+ white-space: pre-wrap;
+ font-family: monospace;
+}
+
+.plain-text-white-space br {
+    display: none;
+}
+
+.dependency-status {
+    font-style: italic;
+}
+.dependency-status .summary {
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Color the titlebox tabs */
+.ticket-info-cfs .titlebox .titlebox-title .left { background-color: #b32; color: #fff;}
+.ticket-info-basics .titlebox .titlebox-title .left { background-color: #b32;  color: #fff;}
+.ticket-info-people .titlebox .titlebox-title .left { background-color: #48c;  color: #fff;}
+.ticket-info-requestor .titlebox .titlebox-title .left { white-space: nowrap; background-color: #48c;  color: #fff;}
+.ticket-info-links .titlebox .titlebox-title .left { background-color: #316531;  color: #fff;}
+.ticket-info-merge .titlebox .titlebox-title .left { background-color: #8b4513;  color: #fff;}
+.ticket-info-reminders .titlebox .titlebox-title .left { background-color: #369;  color: #fff;}
+.ticket-info-dates .titlebox .titlebox-title .left { background-color: #633063;  color: #fff;}
+.ticket-info-attachments .titlebox .titlebox-title .left { background-color: #993366;  color: #fff;}
+.ticket-info-generic .titlebox .titlebox-title .left { background-color: #547ccc;  color: #fff;}
+
+.ticket-summary .titlebox .titlebox-title .left a, .ticket-summary .titlebox .titlebox-title .left a:visited { color: #fff;}
+
+.unread-messages .titlebox , .unread-messages .titlebox .titlebox-title .left {
+  border: 1px solid #99a;
+  border-right: 2px solid #aab;
+  border-bottom: 2px solid #aab;
+
+}
+
+
+.unread-messages .titlebox {
+  background-color: #dde;
+}
+
+.unread-messages .titlebox .titlebox-title .left {
+  background-color: #cce;
+}
+
+.unread-messages .titlebox-content :link {
+    text-decoration: underline;
+}
+
+.ticket-inactive {
+  text-decoration: line-through;
+  color: #666
+}
+
+table.ticket-summary td.boxcontainer:first-child {
+  width: 50%;
+}
+div.requestor-ticket-links {
+    text-align: left;
+    font-size: 0.8em;
+    padding-top: 0.25em;
+}
+
+.ticket-info-requestor .more-about-requestor-extra,
+.ticket-info-requestor .comments-about-user,
+.ticket-info-requestor .more-about-requestor-tickets,
+.ticket-info-requestor .more-about-user-groups
+{
+    margin: 0.5em 0 1em 0;
+}
+
+.ticket-info-requestor .comments-about-user .label,
+.ticket-info-requestor .more-about-user-groups .label,
+.ticket-info-requestor .more-about-requestor-tickets .label
+{
+    display: block;
+    font-weight: bold;
+    text-align: left;
+}
+
+.ticket-info-requestor .more-about-user-groups .value ul,
+.ticket-info-requestor .more-about-requestor-tickets ul
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* textareas get to be bigger when we're in a table */
+tr.edit-custom-field.cftype-Text textarea,
+tr.edit-custom-field.cftype-Freeform input,
+tr.edit-custom-field.cftype-Wikitext textarea
+{
+    width: 100%;
+}
+
+/** End of ticket.css */
+
+
+/**
+  * From base/main.css: @import "accordion.css";
+  */
+
+.user-accordion {
+    margin: 0;
+}
+
+.user-accordion .ui-accordion-content {
+    padding: 0 0 0 20px;
+    margin: 0 0 0.5em 0;
+    border: none;
+    background: none;
+    color: black;
+}
+
+.user-accordion .ui-accordion-header .ui-icon {
+    background-image: url(../../../static/images/jquery_ui/ui-icons_2e83ff_256x240.png);
+    left: 0;
+}
+
+.user-accordion .ui-accordion-header {
+    padding: 0;
+    background: none;
+}
+
+.user-accordion .ui-accordion-header, .user-accordion .ui-accordion-header a {
+    color: black;
+    border: none;
+    margin: 0;
+}
+
+.user-accordion .ui-accordion-header a {
+    padding: 0 0 0.25em 20px;
+}
+
+.user-accordion .ui-accordion-header a:hover,
+.user-accordion .ui-accordion-header.ui-state-active a {
+    text-decoration: underline;
+}
+
+
+
+.user-accordion h3 {
+    position: relative;
+}
+.user-accordion a.user-summary {
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+}
+.user-accordion a.user-summary:hover { text-decoration: underline }
+
+.user-accordion a.modify-user {
+    font-size: 80%;
+    color: black !important;
+}
+
+/** End of accordion.css */
+
+
+/**
+  * From base/main.css: @import "record.css";
+  */
+
+.record .record-field .label {
+    display: inline-block;
+    width: 8em;
+    font-weight: bold;
+    text-align: right;
+}
+
+.record .record-field .value {
+    display: inline-block;
+}
+
+/** End of record.css */
+
+
+/**
+  * From base/main.css: @import "admin.css";
+  */
+
+ul.list-menu .menu-item {
+ font-size: 1.25em;
+}
+ul.list-menu {
+ list-style: none;
+    width: 35%;
+}
+ul.list-menu > li {
+    margin-bottom: .5em;
+    margin-top: .5em;
+}
+ul.list-menu .description {
+ font-style: italic;
+ display: block;
+ padding: 0.2em 0 0 1em;
+}
+
+ul.list-menu ul {
+ list-style: none;
+ padding: 0.25em 0 0 1em;
+}
+ul.list-menu ul li {
+ display: inline;
+ margin-right: 0.5em;
+}
+
+#rt-portal .titlebox iframe {
+    height: 100%;
+    width: 100%;
+    border: 0;
+}
+
+#rt-portal .titlebox {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    bottom: 3em;
+    width: 55%;
+    padding-bottom: 1em;
+}
+
+#rt-portal .titlebox-content {
+    height: 100%;
+    padding: 0;
+}
+
+#rt-portal .titlebox.rolled-up {
+    bottom: auto;
+    padding-bottom: 0;
+}
+
+.admin-hint {
+    font-style: italic;
+}
+
+h2 + .admin-hint {
+    margin-top: -1em;
+}
+
+textarea[name="SMIMECertificate"] {
+    width: 50em;
+    height: 25em;
+}
+
+table.upgrade-history .incomplete {
+    font-weight: bold;
+    color: #900;
+}
+
+table.upgrade-history .upgrade-history-parent .widget a {
+  display: block;
+  margin: 0;
+  width: 20px;
+
+  background: url(../../../static/images/css/rollup-arrow.gif) no-repeat;
+  background-position: center 0;
+
+  padding: 7px 0 0 0;
+  overflow: hidden;
+}
+
+table.upgrade-history .upgrade-history-parent .widget a.rolled-up {
+    background-image: url(../../../static/images/css/rolldown-arrow.gif);
+}
+
+/** End of admin.css */
+
+
+/**
+  * From base/main.css: @import "articles.css";
+  */
+
+#comp-Articles-Article-Search .label h2 {
+    text-align: left;
+}
+
+.articles-select-article select {
+    max-width: 20em;
+}
+
+#articles-needs-setup a {
+    text-decoration: underline;
+}
+
+/** End of articles.css */
+
+
+/**
+  * From base/main.css: @import "portlets.css";
+  */
+
+table.myrt {
+    width: 100%;
+}
+
+table.dashboard {
+    width: 100%;
+    border: 0;
+}
+
+.quick-create .select-queue {
+   width: 12em;
+}
+
+.quick-create input[type="text"], .quick-create textarea {
+    width: 100%;
+
+}
+
+/** End of portlets.css */
+
+
+/**
+  * From base/main.css: @import "tools.css";
+  */
+
+table.myday td {
+ padding: 1em;
+}
+
+ol.dashboard-queries {
+    padding-left: 1.5em;
+}
+
+/** End of tools.css */
+
+
+/**
+  * From base/main.css: @import "login.css";
+  */
+
+.login-body .action-results {
+    list-style: none;
+}
+
+#login-box hr {
+ display: none;
+}
+
+#login-box {
+
+ width: 30em;
+
+margin-right:auto;margin-left:auto;
+ padding-top: 2em;
+ padding-bottom: 2em;
+
+
+}
+
+
+#login-box .input-row {
+  position: relative;
+  height: 1.5em;
+  padding-top: 1em;
+}
+
+#login-box .input-row .label {
+
+ float: left;
+ width: 8em;
+ text-align: right;
+ font-weight: bold;
+
+
+}
+
+#login-box .input-row input {
+  width: 14em;
+}
+
+#login-box .button-row {
+  margin-top: 0.5em;
+}
+
+#quick-personal {
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    /* This avoids a very weird bug in Chrome where opening a select causes a
+     * hover event at (0,0), which will be over top of the menu sometimes */
+    top: 1px;
+}
+
+#quick-personal #not-logged-in {
+    display: block;
+    padding-top: 0.5em;
+    padding-left: 1em;
+}
+
+.redirect-warning tt {
+    display: block;
+    margin: 0.5em 0 0.5em 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
+}
+
+#login-box div.login-help {
+    text-align: center;
+}
+
+/** End of login.css */
+
+
+/**
+  * From base/main.css: @import "history-folding.css";
+  */
+
+.message-stanza-folder {
+    color: #500050;
+    font-size: 0.9em;
+    padding: 0.2em;
+    cursor: pointer;
+}
+
+.message-stanza-folder.open {
+    color: #ccc;
+}
+
+.message-stanza-folder:before, .message-stanza-folder:after {
+    content: " - ";
+}
+
+.message-stanza.closed {
+    display: none;
+}
+
+/* Message quoting */
+
+.message-stanza {
+    color: #000;
+}
+
+.message-stanza > blockquote {
+    margin: 0 0 0 1ex;
+    border-left: 2px #ccc solid;
+    padding-left: 1ex;
+}
+
+.message-stanza .message-stanza{
+    color: #500050;
+}
+.message-stanza .message-stanza > blockquote {
+    border-color: #500050;
+}
+
+.message-stanza .message-stanza .message-stanza{
+    color: #1a1aa6;
+}
+.message-stanza .message-stanza .message-stanza > blockquote {
+    border-color: #1a1aa6;
+}
+
+.message-stanza .message-stanza .message-stanza .message-stanza {
+    color: #006633;
+}
+.message-stanza .message-stanza .message-stanza .message-stanza > blockquote {
+    border-color: #006633;
+}
+
+.message-stanza .message-stanza .message-stanza .message-stanza .message-stanza {
+    color: #003366;
+}
+.message-stanza .message-stanza .message-stanza .message-stanza .message-stanza > blockquote {
+    border-color: #003366;
+}
+
+.message-stanza .message-stanza .message-stanza .message-stanza .message-stanza .message-stanza {
+    color: #993366;
+}
+.message-stanza .message-stanza .message-stanza .message-stanza .message-stanza .message-stanza > blockquote {
+    border-color: #993366;
+}
+
+/** End of history-folding.css */
+
+
+/**
+  * From base/main.css: @import "history.css";
+  */
+
+.transaction {
+    border-top: 2px solid #ccc;
+    padding-bottom: 0.5em;
+    position: relative; /* gives us a container for position: absolute */
+}
+
+.transaction.odd {
+ background-color: #fff;
+}
+
+div.history-container {
+
+ margin-top: 0.75em;
+ border-left: 1px solid #ccc;
+
+ border-right: 2px solid #999;
+  border-bottom: 2px solid #999;
+
+}
+
+.transaction div.metadata span.actions {
+ position: absolute;
+ top: 0;
+ right: 0;
+ padding: 0em;
+ background: #ccc;
+ text-align: right;
+ border-left: 1px solid #999;
+ border-bottom: 1px solid #999;
+ color: #ccc;
+ -moz-border-radius-bottomleft: 0.5em;
+ -webkit-border-bottom-left-radius: 0.5em;
+ white-space: nowrap;
+
+ border-radius: 0 0 0 0.5em;
+}
+
+.transaction div.metadata  span.type {
+ text-align: center;
+ float: left;
+ margin: 0.25em 0.70em 0.25em 0.25em;
+ width: 1em;
+ padding: 0;
+ border-right: 1px solid #999;
+ border-bottom: 1px solid #999;
+ -moz-border-radius-bottomright: 0.25em;
+ -webkit-border-bottom-right-radius: 0.25em;
+
+ border-radius: 0 0 0.25em 0;
+
+}
+
+.transaction span.type a {
+ color: #fff;
+ padding-top: 0.75em;
+ display: block;
+}
+
+
+.transaction span.date {
+ width: 10em;
+}
+
+
+.transaction span.description {
+ margin-left: 1em;
+ font-weight: bold;
+}
+
+.transaction .description a:visited {
+    color: inherit;
+}
+
+.transaction span.time-taken {
+ margin-left: 1em;
+}
+
+.transaction div.content {
+ padding-right: 1em;
+ padding-bottom: 0.7em;
+ margin-left: 1.5em;
+}
+
+
+.transaction .messagebody {
+ font-size: 1em;
+ padding-left: 1em;
+ margin-top: 0.5em;
+ padding-top: 0.5em;
+ border-top: 1px solid #ccc;
+ /*overflow: auto; */
+ min-height: 2.5em;
+ /* To avoid overlapping of "downloadattachment" by messagebody */
+ clear: left;
+ word-wrap: break-word;
+}
+
+.transaction .messagebody img {
+ max-width: 100%;
+}
+
+.transaction div.downloadattachment {
+float: right;
+clear: both;
+font-size: 0.9em;
+text-align: right;
+background: #ddd;
+padding: 0.5em;
+margin-left: 1em;
+
+border: 1px solid #ccc;
+border-right: 2px solid #aaa;
+border-bottom: 2px solid #aaa;
+margin-top: 0.5em;
+-moz-border-radius: 0.5em;
+-webkit-border-radius: 0.5em;
+ border-radius: 0.5em;
+}
+
+.transaction div.downloadattachment .downloadcontenttype{
+color: #666;
+padding-right:0.25em;
+}
+
+
+.transaction .message-header-key {
+  width: 7em;
+  font-weight: bold;
+  color: #666;
+}
+
+
+.transaction .messagebody .messagebody{
+ font-size: 1em;
+ padding: 0;
+ border: 0;
+ margin: 0;
+}
+
+
+
+.transaction.basics .type { background: #b32; }
+.transaction.cfs .type { background: #b32; }
+.transaction.people .type { background: #48c; }
+.transaction.links .type { background: #316531; }
+.transaction.dates .type { background: #633063; }
+.transaction.message .type { background: #069; }
+.transaction.reminders .type { background: #369; }
+.transaction.other .type { background: #abc; }
+.transaction.error .type { background: #abc; }
+.transaction.attachment-truncate .type, .transaction.attachment-drop .type { background-color: #abc; }
+
+.transaction.error { background-color: #fcc; }
+.transaction.attachment-truncate, .transaction.attachment-drop { background-color: #ffc; }
+
+
+.transaction .message-header-value.verify { font-weight: bold; }
+.transaction .message-header-value.verify.bad                  { color: #A00; }
+.transaction .message-header-value.verify.done.trust-UNDEFINED { color: #F60; }
+.transaction .message-header-value.verify.done.trust-NONE      { color: #900; }
+.transaction .message-header-value.verify.done.trust-NEVER     { color: #900; }
+.transaction .message-header-value.verify.done.trust-MARGINAL  { color: #F60; }
+.transaction .message-header-value.verify.done.trust-FULL      { color: #060; }
+.transaction .message-header-value.verify.done.trust-FULLY     { color: #060; }
+.transaction .message-header-value.verify.done.trust-ULTIMATE  { color: #060; }
+
+/** End of history.css */
+
+
+/**
+  * From base/main.css: @import "charts.css";
+  */
+
+.chart-group-by fieldset,
+.chart-calculate fieldset {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #aaa;
+}
+
+.chart-group-by fieldset legend,
+.chart-calculate fieldset legend {
+    padding: 0 1em;
+}
+
+.chart-picture input[name=Width],
+.chart-picture input[name=Height] {
+    width: 3em;
+    text-align: right;
+}
+
+.chart-wrapper .collection-as-table th {
+    text-shadow: 0 0 3px #ddd;
+}
+
+.chart-wrapper .collection-as-table tr th.evenline {
+    background: #eee;
+}
+.chart-wrapper .collection-as-table tr th.oddline {
+    background: #ddd;
+}
+
+/** End of charts.css */
+
+
+/**
+  * From base/main.css: @import "print.css";
+  */
+
+@media print { 
+    * {
+        position: static;
+        overflow: visible !important;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 10pt;
+        background: white !important;
+    }
+
+    div#body {
+        background: transparent;
+        margin-top: 3em !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-style: none !important;
+        border: none !important;
+        -webkit-border-radius: none !important;
+        -moz-border-radius: none !important;
+        border-radius: none !important;
+    }
+
+    div#header h1 {
+        margin-bottom: 1em !important;
+        padding-left: 1em !important;
+        position: static !important;
+        height: auto;
+        width: auto;
+        overflow: visible;
+        color: black !important;
+        padding: 0 !important;
+    }
+
+    #header {
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+    #quickbar,
+    #app-nav,
+    #page-menu,
+    #main-navigation,
+    #page-navigation,
+    .titlebox-title .widget,
+    .titlebox-title .right,
+    .ticket-info-links .titlebox-content .create,
+    div.transaction div.metadata span.actions,
+    div.transaction div.content div.downloadattachment,
+    #comp-Search-Results #body .refresh,
+    .search-result-actions,
+    #comp-Search-Chart .chart-meta,
+    #footer,
+    #topactions,
+    #logo,
+    div.summary + br {
+        display: none
+    }
+
+    /* Hide "Click to load" and "Loading" message. Loaded history is #id > .history */
+
+    #deferred_ticket_history > .titlebox,
+    #delayed_ticket_history > .titlebox {
+        display: none
+    }
+
+    a:link,
+    a:visited {
+        font-weight: bold !important
+    }
+
+    div.transaction .metadata .type {
+        display: none
+    }
+
+    div.titlebox-title .left {
+        border: 0 !important;
+        color: black !important;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        background-color: transparent !important;
+    }
+
+    .titlebox.rolled-up .titlebox-title .left:after {
+        content: " [-]";
+        font-weight: normal;
+    }
+
+    /* outer Ticket Metadata titlebox gets no padding, but inside ones do below */
+
+    .summary .titlebox-content {
+        background: transparent !important
+    }
+
+    div.summary .ticket-summary div.titlebox-content {
+        padding: 0.5em 1em 1em 1em !important
+    }
+
+    div.titlebox-title .left * {
+        color: black !important;
+        background: transparent !important;
+    }
+
+    div.messagebody a[href]:after {
+        text-decoration: underline !important;
+        content: " (" attr(href) ") ";
+    }
+
+    div.results {
+        background: #ccc
+    }
+
+    .messagebody {
+        orphans: 2;
+        widows: 2;
+    }
+
+    div.titlebox-title {
+        page-break-after: avoid;
+        border: 0 !important;
+    }
+
+    .history-container,
+    div.transaction {
+        border: 0 !important
+    }
+
+    div.transaction {
+        page-break-inside: avoid
+    }
+
+    /* hide "Ticket metadata" */
+
+    div.summary > div > div.titlebox > div.titlebox-title {
+        display: none !important
+    }
+
+    .value {
+        font-weight: bold !important
+    }
+
+    .label,
+    .label a,
+    .labeltop,
+    .labeltop a {
+        font-weight: normal !important
+    }
+
+    div.titlebox {
+        margin-bottom: 0
+    }
+
+    /* for web2 and ballard*/
+
+    div.titlebox {
+        border: 0 !important
+    }
+
+    div.history .titlebox-title {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* for web2 */
+
+    #page-action-menu {
+        display: none
+    }
+
+    /* form elements */
+
+    input,
+    select,
+    option {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #666 !important;
+    }
+
+    option {
+        border: none !important
+    }
+
+    option[selected] {
+        font-weight: bold !important
+    }
+}
+
+/** End of print.css */
+
+
+/** End of ../base/main.css */
+
+
+
+/**
+  * From rudder/main.css: @import "base.css";
+  */
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #666
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+textarea:focus,
+input:focus {
+    background-color: #ffd
+}
+
+/** End of base.css */
+
+
+/**
+  * From rudder/main.css: @import "layout.css";
+  */
+
+/* body */
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: arial, helvetica, sans-serif;
+    color: #000000;
+}
+
+div#body {
+    padding: 3em;
+    margin-left: 1em;
+    margin-top: 4em;
+    margin-right: 0;
+    margin-bottom: 0em;
+    background: #fff;
+    z-index: 1;
+}
+
+div#footer {
+    position: absolute;
+    right: 0;
+    text-align: right;
+    font-size: 0.9em;
+    margin-top: 2em;
+    background: #fff;
+    margin-bottom: 0;
+    padding-left: 3em;
+    padding-right: 1em;
+}
+
+div#footer #time {
+    display: none
+}
+
+div#footer #bpscredits {
+    text-align: right;
+    background: url(../../../static/images/bpslogo.png) no-repeat top right;
+    padding-top: 4em;
+}
+
+/* logo stuff */
+
+div#logo {
+    position: absolute;
+    right: 2px;
+    top: 0;
+    height: 2.3em;
+}
+
+div#logo a img {
+    border: 0;
+    height: 100% !important;
+    width: auto !important;
+    float: right;
+}
+
+div#logo .rtname {
+    position: relative;
+    font-weight: bold;
+    text-align: center;
+    top: 0.7em;
+    padding-right: 1em;
+    float: left;
+}
+
+div#quickbar,
+div#logo {
+    font-size: 0.9em
+}
+
+div#quickbar a,
+div#logo a {
+    color: #000
+}
+
+div#quickbar {
+    background: #fff;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+    height: 1em;
+    border-bottom: 1px solid #ccc;
+}
+
+div#header {
+    position: absolute;
+    top: 2.3em;
+    left: 0;
+    right: 0;
+    height: 3.2em;
+    background: #547CCC;
+}
+
+div#header h1 {
+    position: absolute;
+    left: 1em;
+    right: 20em;
+    top: 0em;
+    height: 1.4em;
+    font-size: 1.4em;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* in multi-column layouts, make sure we have an internal gutter */
+
+tr .boxcontainer {
+    padding-right: 3em
+}
+
+tr .boxcontainer:last-child {
+    padding-right: 0
+}
+
+/** End of layout.css */
+
+
+/**
+  * From rudder/main.css: @import "nav.css";
+  */
+
+.sf-menu {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.sf-menu li:hover {
+    background-color: #CFDEFF
+}
+
+.sf-menu li,
+.sf-menu li li,
+.sf-menu li li li {
+    background-color: #fff
+}
+
+.sf-sub-indicator {
+    background-image: url(../../../static/css/images/arrows-grey.png)
+}
+
+.sf-menu li li .sf-sub-indicator {
+    margin-top: -3px
+}
+
+#page-menu.sf-menu li .sf-sub-indicator {
+    top: 0.7em
+}
+
+#page-menu.sf-menu li:hover ul,
+#page-menu.sf-menu li.sfHover ul {
+    top: 2.5em
+}
+
+#main-navigation {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    z-index: 9999;
+    text-color: #000;
+}
+
+#main-navigation .sf-menu a,
+#main-navigation .sf-menu a:hover {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-color: #fff;
+    color: #000;
+}
+
+#main-navigation a {
+    border-top: none
+}
+
+#main-navigation li li a {
+    border-top: 1px solid white
+}
+
+#app-nav.sf-menu > li:first-child > a {
+    border-left: none
+}
+
+#main-navigation #app-nav > li,
+#main-navigation #app-nav > li > a {
+    background-color: transparent
+}
+
+#page-navigation {
+    position: absolute;
+    top: 6em;
+    right: 0;
+    left: 0;
+    padding-right: 3em;
+    z-index: 9995;
+    font-size: 0.9em;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+}
+
+#page-navigation #page-menu {
+    margin-top: 0.2em;
+    float: right;
+    width: auto;
+}
+
+#page-navigation .sf-menu li {
+    background-color: transparent
+}
+
+#page-navigation .sf-menu li li,
+#page-navigation .sf-menu li li li {
+    background-color: #fff
+}
+
+#page-navigation .sf-menu a:visited,
+#page-navigation .sf-menu a {
+    border: none;
+    color: #000;
+}
+
+/* to stop a "flash" of an unstyled menu on an older browser,  hide the menu until superfish has initialized it */
+
+#app-nav.toplevel {
+    display: none
+}
+
+#app-nav.toplevel.sf-menu {
+    display: block
+}
+
+#page-menu.toplevel {
+    display: none
+}
+
+#page-menu.toplevel.sf-menu {
+    display: block
+}
+
+#topactions {
+    position: absolute;
+    background: transparent;
+    top: 2.5em;
+    right: 0em;
+    padding-right: 0.7em;
+    width: auto;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    min-width: 42em;
+    font-size: 0.9em;
+    z-index: 99;
+}
+
+#topactions form * {
+
+}
+
+#topactions input,
+#topactions select,
+#topactions button {
+    font-size: 1em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width: 8em;
+    vertical-align: middle;
+}
+
+#topactions .select-queue {
+    padding-right: 0
+}
+
+#topactions #simple-search .field {
+    margin-left: 1em;
+    color: #787;
+}
+
+#topactions #simple-search .field:focus {
+    color: #000
+}
+
+.sf-menu ul {
+    background-image: none;
+    padding: 0;
+}
+
+.sf-menu.sf-shadow ul {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-box-shadow: 2px 2px 8px -2px #999;
+    -webkit-box-shadow: 2px 2px 8px -2px #999;
+    box-shadow: 2px 2px 8px -2px #999;
+}
+
+/* The bookmark star is too tall without adjusting the padding and height */
+
+.sf-menu .toggle-bookmark a {
+    padding: 0 1em;
+    height: 2.5em;
+}
+
+.sf-menu .toggle-bookmark a img {
+    padding-top: 0.6em
+}
+
+/* Pin page menu to top left corner once you scroll past it */
+
+#page-navigation #page-menu.pinned {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: auto;
+    margin-top: 0;
+    background: white;
+    border-left: 1px #aaa solid;
+    border-bottom: 1px #aaa solid;
+    border-radius: 0 0 0 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    /* stupid vendor prefixes */
+    -moz-border-radius: 0 0 0 5px;
+    -webkit-border-radius: 0 0 0 5px;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+#page-menu.pinned li:hover ul,
+#page-menu.pinned li.sfHover ul {
+    border-left: 1px #aaa solid;
+    border-right: 1px #aaa solid;
+    z-index: -1 !important; /* relative to current stacking context */
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+/* round off the corner of the first menu item so it matches the container */
+
+#page-menu.pinned > li:first-of-type,
+#page-menu.pinned > li:first-of-type > a {
+    border-radius: 0 0 0 5px;
+    -moz-border-radius: 0 0 0 5px;
+    -webkit-border-radius: 0 0 0 5px;
+}
+
+/** End of nav.css */
+
+
+/**
+  * From rudder/main.css: @import "boxes.css";
+  */
+
+.titlebox {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.titlebox .titlebox-content {
+    padding: 0.5em 0.25em 0.5em 0.25em;
+    border-top: 2px solid #aaa;
+    min-height: 3em;
+    -moz-border-radius-bottomright: 0.5em;
+    -webkit-border-bottom-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    -moz-border-radius-bottomleft: 0.5em;
+    -webkit-border-bottom-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom: 1px solid #eee;
+}
+
+* html .titlebox {
+    border-top: none;
+    border-left: none;
+}
+
+.titlebox .titlebox {
+    margin-top: 1em;
+    margin-right: 0.25em;
+}
+
+.titlebox .titlebox .titlebox-content {
+
+}
+
+.titlebox {
+    margin-left: 0em;
+    margin-right: 0em;
+    min-height: 1.25em;
+}
+
+.titlebox .titlebox-title {
+    position: relative;
+    background-color: transparent;
+}
+
+.titlebox .titlebox-title a {
+    text-decoration: none;
+    color: black;
+}
+
+.titlebox .titlebox-title a:hover {
+    text-decoration: underline
+}
+
+.titlebox.rolled-up  .titlebox-title .left,
+.titlebox.rolled-up  .titlebox-title .left a {
+    color: #ccc;
+    line-height: 1.6em;
+}
+
+.titlebox.rolled-up .titlebox-title {
+    border-bottom: 1px solid #ccc
+}
+
+.titlebox.rolled-up .titlebox-title .right {
+    display: none
+}
+
+.titlebox .titlebox-title .left {
+    font-weight: bold;
+    background: transparent;
+    margin-left: 1em;
+    padding: 0.5em 1.25em 0.25em 1.25em;
+    line-height: 1.4em;
+    font-size: 1.1em;
+    border: none;
+}
+
+.titlebox .titlebox-title .left,
+.titlebox .titlebox-title .left a {
+    color: #3858a3
+}
+
+.titlebox .titlebox-title .right-empty {
+    display: none
+}
+
+.titlebox .titlebox-title .right {
+    position: absolute;
+    right: 2px;
+    top: 0;
+    font-size: 0.9em;
+    padding-right: 0em;
+    padding-left: 0.4em;
+    padding-bottom: 0.2em;
+    padding-top: 0.5em;
+    -moz-border-radius-bottomleft: 0.25em;
+    -webkit-border-bottom-left-radius: 0.25em;
+    -moz-border-radius-topright: 0.25em;
+    -webkit-border-top-right-radius: 0.25em;
+    border-radius: 0 0.25em 0 0.25em;
+}
+
+.titlebox .titlebox-title .right a,
+.titlebox .titlebox-title .right a:visited {
+    color: #999;
+    font-weight: bold;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.titlebox:hover .titlebox-title .right a,
+.titlebox:active .titlebox-title .right a {
+    color: #000
+}
+
+.titlebox .titlebox-title .widget a {
+    display: block;
+    margin: 0;
+    width: 20px;
+    background: url(../../../static/images/css/rollup-arrow.gif) no-repeat;
+    background-position: center 0;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    padding: 7px 0 0 0;
+    overflow: hidden;
+}
+
+.titlebox.rolled-up .titlebox-title .widget a {
+    background-image: url(../../../static/images/css/rolldown-arrow.gif)
+}
+
+div.results .titlebox .titlebox-content {
+    border: none;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.results .titlebox-content ul {
+    list-style-type: none
+}
+
+.results .titlebox-title {
+    display: none
+}
+
+.titlebox form {
+    display: inline-block; /* makes the submit buttons not end up way far away */
+}
+
+/** End of boxes.css */
+
+
+/**
+  * From rudder/main.css: @import "forms.css";
+  */
+
+/* These override the base titlebox rules in base/forms.css. They try not to
+   duplicate properties. */
+
+div.results .titlebox,
+div.error-titlebox {
+    border: none;
+    background: none;
+    font-weight: bold;
+}
+
+div.results .titlebox-content {
+    border: 1px solid #aa9;
+    border-bottom: 2px solid #990;
+    border-right: 2px solid #990;
+    background: #ffc;
+}
+
+div.results .titlebox-title .left {
+    border: solid #aa9;
+    border-width: 1px 1px 0 1px;
+}
+
+div.error-titlebox .titlebox-title span.left {
+    border: none;
+    border-right: 2px solid #b00;
+    margin-left: 0;
+    padding-left: 2.3em;
+    background-color: #f00;
+    color: #fff;
+}
+
+div.error-titlebox .titlebox-content {
+    background-color: #fcc;
+    padding: 1em;
+}
+
+div#body>div.error {
+    background-color: #fcc;
+    padding: 1em;
+}
+
+div.error .titlebox-title .widget a {
+    background-position: center -7px
+}
+
+input[type=reset],
+input[type=submit],
+input[class=button],
+button,
+input,
+select { font-size: 1.0em }
+
+input[type=reset],
+input[type=submit],
+input[class=button],
+button {
+    color: #fff;
+    background: #4868b3;
+    border: 1px solid #fff;
+    padding: 0.5em;
+}
+
+input.button:focus,
+button:focus,
+input[type=reset]:focus,
+input[type=submit]:focus,
+input[class=button]:focus,
+input.button:hover,
+button:hover,
+input[type=reset]:hover,
+input[type=submit]:hover,
+input[class=button]:hover {
+    background: #3D5B9D
+}
+
+input.button:active,
+button:active,
+input[type=reset]:active,
+input[type=submit]:active,
+input[class=button]:active {
+    background: #1D3B7D
+}
+
+input[type=reset],
+input[type=submit],
+input[class=button],
+button {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+}
+
+.value {
+    font-size: 1em
+}
+
+/** End of forms.css */
+
+
+/**
+  * From rudder/main.css: @import "login.css";
+  */
+
+#login-box .titlebox-title .left {
+    padding-left: 0em
+}
+
+#login-box .input-row .label {
+    width: 13em
+}
+
+/** End of login.css */
+
+
+/**
+  * From rudder/main.css: @import "dashboards.css";
+  */
+
+table.dashboard {
+    margin-top: 6em
+}
+
+#body>table.dashboard {
+    margin-top: inherit
+}
+
+/** End of dashboards.css */
+
+
+/**
+  * From rudder/main.css: @import "ticket-lists.css";
+  */
+
+table.queue-summary,
+table.collection-as-table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+table.collection-as-table td {
+    padding-bottom: 0.25em
+}
+
+table.collection-as-table h1,
+table.collection-as-table h2,
+table.collection-as-table h3,
+table.collection-as-table h4,
+table.collection-as-table h5 {
+    margin: 0;
+    margin-right: 0.5em;
+    padding: 0;
+    padding: 0.1em;
+    display: inline-block;
+    font-weight: normal;
+}
+
+table.collection-as-table h1 a,
+table.collection-as-table h2 a,
+table.collection-as-table h3 a,
+table.collection-as-table h4 a,
+table.collection-as-table h5 a {
+    font-weight: normal
+}
+
+table.queue-summary tr>*:first-child {
+    padding-left: 1em
+}
+
+table.queue-summary tr>*:last-child {
+    padding-right: 1em
+}
+
+table.queue-summary a,
+table.collection-as-table a {
+    font-weight: bold
+}
+
+table.collection-as-table th.collection-as-table,
+table.queue-summary th.collection-as-table {
+    background: transparent;
+    padding: 0.25em;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    color: #3858a3;
+}
+
+table.collection-as-table th.collection-as-table a,
+table.queue-summary th.collection-as-table a {
+    color: #3858a3
+}
+
+table.collection-as-table th.collection-as-table {
+    text-align: left
+}
+
+table.queue-summary th.collection-as-table {
+    text-align: right
+}
+
+table.collection-as-table,
+table.queue-summary {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1em;
+}
+
+table.queue-summary th.collection-as-table:first-child {
+    text-align: left
+}
+
+tr.collection-as-table+tr.collection-as-table th,
+table.collection-as-table.chart th {
+    border-bottom: 2px solid #ccc
+}
+
+table.queue-summary td {
+    background: #efefef;
+    border-bottom: 1px solid #ccc;
+}
+
+tr.evenline td,
+tr.oddline td {
+    padding-top: 0.5em;
+    border-top: 1px solid #cccccc;
+}
+
+tr.evenline td {
+    background: #fff
+}
+
+tr.oddline td {
+    background: #eee
+}
+
+tr.evenline+tr.evenline td,
+tr.oddline+tr.oddline td {
+    border-top: none
+}
+
+tr.evenline,
+tr.oddline {
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+}
+
+tr.evenline+tr.evenline td,
+tr.oddline+tr.oddline td {
+    padding-top: 0;
+    border: none;
+}
+
+table.collection-as-table td:first-child,
+table.collection-as-table th:first-child {
+    padding-left: 1em
+}
+
+table.collection-as-table td:last-child,
+table.collection-as-table th:last-child {
+    padding-right: 1em
+}
+
+th.collection-as-table,
+td.collection-as-table {
+    padding-right: 0.5em
+}
+
+.pagenum.a:hover,
+.paging a.nav:hover {
+    text-decoration: underline
+}
+
+.pagenum *,
+.paging a.nav {
+    padding: .5em
+}
+
+.currentpage {
+    text-decoration: none;
+    font-weight: bold;
+    background: #eee;
+}
+
+div.paging {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+/* full-page ticket lists */
+
+#body>table.collection-as-table {
+    margin-bottom: 2em
+}
+
+.chart.image {
+    margin-top: -1em;
+    padding-right: 2em;
+    float: left;
+    clear: both;
+}
+
+.chart-wrapper {
+    display: block;
+    width: auto;
+}
+
+.chart-wrapper .collection-as-table {
+    width: auto;
+    font-size: 1em;
+    /* Firefox needs this to let the table flow below the chart on narrow screens */
+    clear: right;
+}
+
+.chart-wrapper .collection-as-table th.collection-as-table {
+    text-align: center;
+    padding: 0.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+.chart-wrapper .collection-as-table tr.total td {
+    border-top: 1px solid #ccc
+}
+
+.chart-wrapper .collection-as-table td.value {
+    padding-left: 0.5em
+}
+
+.chart-wrapper .query {
+    clear: both;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 1em;
+}
+
+.chart-wrapper .collection-as-table .label {
+    font-weight: bold
+}
+
+.chart-wrapper .query .label {
+    font-weight: bold
+}
+
+.chart-meta {
+    padding-top: 2em;
+    border-top: 1px solid #ccc;
+}
+
+.chart-meta .chart-type {
+    display: inline-block;
+    float: left;
+    padding-right: 2em;
+    clear: both;
+}
+
+.chart-meta .saved-search {
+    display: inline-block
+}
+
+/** End of ticket-lists.css */
+
+
+/**
+  * From rudder/main.css: @import "ticket-search.css";
+  */
+
+#comp-Search-Build #body {
+    position: relative
+}
+
+#pick-criteria select {
+    width: 8em
+}
+
+#pick-criteria tr {
+    height: 1.5em
+}
+
+#pick-criteria td.label {
+    font: message-box;
+    padding-right: 0.5em;
+    width: 11em;
+}
+
+#pick-criteria td.label select {
+    width: 8.5em;
+    text-align: right;
+}
+
+#pick-criteria td.operator {
+    padding-right: 0.5em;
+    text-align: left;
+    vertical-align: bottom;
+    width: 7em;
+}
+
+#pick-criteria td.operator select {
+    text-align: right
+}
+
+#pick-criteria td.value input,
+#pick-criteria td.value select {
+    width: 11em
+}
+
+#pick-criteria td.value #ValueOfDate {
+    width: 11em
+}
+
+#pick-criteria td.value #ValueOfTime {
+    width: 4em
+}
+
+#pick-criteria td.value #ValueOfTime-TimeUnits {
+    width: 5.5em
+}
+
+#pick-criteria td.value {
+    padding-right: 0.5em;
+    text-align: left;
+    font: message-box;
+}
+
+#editquery,
+#editsearches {
+    position: absolute;
+    margin-top: 1.5em;
+    right: 1em;
+    left: 60%;
+    top: 1em;
+}
+
+#editquery {
+    top: 1.3em
+}
+
+#editsearches {
+    top: 24em
+}
+
+#pick-criteria {
+    width: 58%;
+    padding-top: 0em;
+    margin-top: 0em;
+}
+
+#pick-criteria .titlebox-content {
+    overflow-x: auto
+}
+
+#BuildQuery .submit {
+    width: 58%
+}
+
+#sorting.titlebox {
+    width: 55%;
+    padding-right: 1em;
+}
+
+#display-options .submit {
+    width: 100%
+}
+
+.search-result-views {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -2px;
+    margin-right: 0em;
+    padding: 0.25em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    background-color: #ccc;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid #999;
+    -moz-border-radius-bottomleft: 0.5em;
+    -webkit-border-bottom-left-radius: 0.5em;
+    border-radius: 0 0 0 0.5em;
+}
+
+.search-result-views li {
+    display: inline
+}
+
+.search-result-views li:after {
+    content: " \00b7 "
+}
+
+.search-result-views li:last-child:after {
+    content: ""
+}
+
+.edit-saved-searches .label {
+    display: inline-block;
+    width: 10em;
+}
+
+span#display-options {
+    display: block;
+    padding-top: 2em;
+    margin-top: 2em;
+    border-top: 1px solid #ccc;
+    clear: both;
+}
+
+span#display-options .titlebox#sorting {
+    float: left;
+    width: auto;
+    margin-right: 2em;
+    min-width: 35%;
+}
+
+span#display-options .titlebox#columns {
+    float: left
+}
+
+span#display-options .titlebox#columns table.edit-columns td {
+    padding: 0.5em
+}
+
+span#display-options .titlebox#columns table.edit-columns div.row {
+    width: 9em
+}
+
+span#display-options .titlebox#columns table.edit-columns span.label {
+    width: 2em
+}
+
+span#display-options .titlebox#columns table.edit-columns span.value input,
+span#display-options .titlebox#columns table.edit-columns span.value select {
+    width: 7em;
+    padding: 0;
+}
+
+span#display-options .titlebox#columns table.edit-columns span.value {
+    display: inline-block;
+    width: 7em;
+}
+
+#BuildQuery #formatbuttons.submit {
+    width: 85%
+}
+
+.refresh {
+    float: left
+}
+
+/* Force some widget to fit at max parent box */
+
+#HomeRefreshInterval,
+#SavedSearchLoad,
+#SavedSearchOwner {
+    max-width: 100%
+}
+
+/** End of ticket-search.css */
+
+
+/**
+  * From rudder/main.css: @import "ticket-forms.css";
+  */
+
+#ticket-create-metadata .cflabel .name,
+#ticket-update-metadata .cflabel .name {
+    font-weight: inherit
+}
+
+.sidebyside #ticket-create-message .button[name="AddMoreAttach"],
+.sidebyside #ticket-update-message .button[name="AddMoreAttach"] {
+    margin-right: -0.25em;
+    // right align with the button in the outer div: ;
+}
+
+/** End of ticket-forms.css */
+
+
+/**
+  * From rudder/main.css: @import "ticket.css";
+  */
+
+.titlebox-title.inverse .widget a,
+.ticket-info-cfs .titlebox-title .widget a,
+.ticket-info-basics .titlebox-title .widget a,
+.ticket-info-people .titlebox-title .widget a,
+.ticket-info-requestor .titlebox-title .widget a,
+.ticket-info-links .titlebox-title .widget a,
+.ticket-info-merge .titlebox-title .widget a,
+.ticket-info-reminders .titlebox-title .widget a,
+.ticket-info-dates .titlebox-title .widget a,
+.ticket-info-attachments .titlebox-title .widget a {
+    background-position: center -7px
+}
+
+.titlebox-title.inverse,
+.ticket-info-cfs .titlebox-title,
+.ticket-info-basics .titlebox-title,
+.ticket-info-people .titlebox-title,
+.ticket-info-requestor .titlebox-title,
+.ticket-info-links .titlebox-title,
+.ticket-info-merge .titlebox-title,
+.ticket-info-reminders .titlebox-title,
+.ticket-info-dates .titlebox-title,
+.ticket-info-attachments .titlebox-title {
+    margin-left: 1em
+}
+
+.titlebox-title.inverse  .left,
+.ticket-info-cfs .titlebox-title  .left,
+.ticket-info-basics .titlebox-title  .left,
+.ticket-info-people .titlebox-title  .left,
+.ticket-info-requestor .titlebox-title  .left,
+.ticket-info-links .titlebox-title  .left,
+.ticket-info-merge .titlebox-title  .left,
+.ticket-info-reminders .titlebox-title  .left,
+.ticket-info-dates .titlebox-title  .left,
+.ticket-info-attachments .titlebox-title  .left {
+    padding-left: 2.25em;
+    margin-left: 0;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+    -webkit-border-top-left-radius: 0.3em;
+    -webkit-border-top-right-radius: 0.3em;
+    -moz-border-radius-topleft: 0.3em;
+    -moz-border-radius-topright: 0.3em;
+    border-radius: 0.3em 0.3em 0 0;
+}
+
+.titlebox-title.inverse .left,
+.titlebox-title.inverse .left a {
+    color: #fff;
+}
+
+.titlebox.ticket-info-reminders table {
+    width: 100%
+}
+
+.titlebox.ticket-info-reminders table form {
+    display: inline-block;
+    width: 100%;
+}
+
+/* don't put a background on the outer titlebox */
+
+.summary>div>.titlebox>.titlebox-content {
+    background: none
+}
+
+/** End of ticket.css */
+
+
+/**
+  * From rudder/main.css: @import "history.css";
+  */
+
+div.history-container {
+    border: 0
+}
+
+.history .transaction.message div.content {
+    padding-right: 0;
+    padding-bottom: 3em;
+    margin-left: 3em;
+}
+
+.history .transaction .metadata span.type {
+    margin: 0;
+    font-size: 1.2em;
+    margin-right: 1em;
+    padding: 0.25em;
+    border: none;
+}
+
+.history .transaction .metadata span.type a {
+    color: transparent
+}
+
+.history .transaction .metadata span.type a#lasttrans {
+    display: inline
+}
+
+.history .transaction:hover .metadata span.type a {
+    color: white
+}
+
+.history .transaction .metadata .date,
+.history .transaction .metadata .description,
+.history .transaction .metadata .time-taken {
+    margin-top: 0.5em;
+    display: inline-block;
+    margin-right: 2em;
+}
+
+.history .transaction .metadata {
+    margin-bottom: 0em;
+    margin-top: 0.25em;
+}
+
+.transaction div.metadata span.actions {
+    background: #eee;
+    color: #eee;
+    display: inline-block;
+    margin-right: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-right: 1px solid #999;
+    -moz-border-radius-bottomright: 0.5em;
+    -webkit-border-bottom-right-radius: 0.5em;
+}
+
+.transaction div.metadata span.actions a {
+    padding: 0.2em
+}
+
+.transaction div.downloadattachment {
+    float: right;
+    clear: both;
+    text-align: right;
+    background: transparent;
+    padding-top: 0.5em;
+    margin-left: 1em;
+    border: none;
+    color: transparent;
+    line-height: 1em;
+}
+
+.transaction div.downloadattachment a {
+    color: #aaa;
+    display: block;
+}
+
+.transaction div.downloadattachment .downloadcontenttype {
+    color: #ccc;
+    display: block;
+}
+
+/** End of history.css */
+
+
+/**
+  * From rudder/main.css: @import "admin.css";
+  */
+
+#comp-Admin .list-menu {
+    float: left
+}
+
+#rt-portal .titlebox {
+    position: relative;
+    top: 0em;
+    height: 27em;
+    right: 0em;
+    bottom: 3em;
+    width: 50%;
+    float: right;
+    margin-left: 1em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+/** End of admin.css */
+
+
+/**
+  * From rudder/main.css: @import "misc.css";
+  */
+
+.comment {
+    padding-left: 0.5em;
+    color: #999;
+}
+
+#comp-Ticket-ShowEmailRecord #header {
+    top: 0em;
+}
+
+#comp-Ticket-ShowEmailRecord #body {
+    margin-left: 1em;
+    margin-top: 1em;
+    overflow: auto;
+}
+
+span.cflabel,
+td.cflabel,
+span.label,
+span.labeltop,
+td.label,
+td.labeltop {
+    font-weight: bold;
+    color: #666;
+    font-size: 1em;
+    min-width: 6em;
+}
+
+span.cflabel .type,
+td.cflabel .type {
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+table.myday h2 {
+    display: inline
+}
+
+table.myday td {
+    padding: 0.25em
+}
+
+/** End of misc.css */
+
+table.miniplot {
+    width: 100%;
+    border-collapse: collapse;
+}
+table.miniplot td {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid black;
+}
+table.miniplot .graph {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 60px;
+}
+table.miniplot .graph ul { 
+    height: 100px; 
+    margin: 0;
+    padding: 0;
+}
+table.miniplot .graph ul li {  
+    list-style: none;
+    position: absolute; 
+    bottom: 0px; 
+    padding: 0 !important; 
+    margin: 0 !important; 
+    border-bottom: none;
+}
+table.miniplot .graph ul li .data {
+    display: none;
+}
+
+.miniplot .demoblock { margin: 0 10px; padding: 0 30px; }
+
+.miniplot .c1 { border: 2px solid #990000; background: #ff0000; }
+.miniplot .c2 { border: 2px solid #996600; background: #ff9900; }
+.miniplot .c3 { border: 2px solid #009900; background: #00ff00; }
+.miniplot .c4 { border: 2px solid #009999; background: #00ffff; }
+.miniplot .c5 { border: 2px solid #000099; background: #0000ff; }
+.miniplot .c6 { border: 2px solid #990099; background: #ff00ff; }
+graph .c5 { border: 2px solid #000099; background: #0000ff; }
+.graph .c6 { border: 2px solid #990099; background: #ff00ff; }
+
+tr.titlerow  th { 
+    border-bottom: solid black 1px;
+    margin: 0;
+    font-size:80%;
+    text-wrap:  none;
+}
+
+tr.grandtotal td, tr.grandtotal th{
+    border-top: 1px solid black;
+}
+
+th.label { 
+    align: left;
+}
+
+table.miniplot th.legend {
+    font-style: normal;
+    font-size: 80%;
+}
+
+table.numberreport {
+    width: 100%;
+}
+table.numberreport td {
+    padding: 0 1em;
+    text-align: right;
+}
+
